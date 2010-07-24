@@ -1,0 +1,29 @@
+syntax: glob
+*.bak
+
+# Generated Windows project/solution files
+*.vcproj
+*.sln
+
+# Windows build/temp files
+*.obj
+*.lib
+*.dll
+*.ilk
+*.pdb
+*.exe
+*.ncb
+*.suo
+
+Linux build files
+*.o
+*.Po
+*.Plo
+*.lo
+*.la
+
+syntax: regexp
+~$
+Makefile$
+Makefile.Release
+Makefile.Debug
