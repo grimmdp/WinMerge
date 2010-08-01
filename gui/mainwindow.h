@@ -18,6 +18,9 @@ public:
 protected slots:
     void OpenDirs();
 
+protected:
+    void DoDirCompare(const QString &left, const QString &right);
+
 private:
     Ui::mMainWindow mUI;
 };

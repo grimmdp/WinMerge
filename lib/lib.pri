@@ -1,5 +1,7 @@
 # This file is included by the gui/gui.pro file
 
-HEADERS += $$PWD/libxdiff_tools.h
+HEADERS += $$PWD/dircompare.h \
+           $$PWD/libxdiff_tools.h
 
-SOURCES += $$PWD/libxdiff_tools.cpp
+SOURCES += $$PWD/dircompare.cpp \
+           $$PWD/libxdiff_tools.cpp
