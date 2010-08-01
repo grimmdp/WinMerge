@@ -14,8 +14,9 @@ syntax: glob
 *.exe
 *.ncb
 *.suo
+*.idb
 
-Linux build files
+# Linux build files
 *.o
 *.Po
 *.Plo
@@ -27,3 +28,6 @@ syntax: regexp
 Makefile$
 Makefile.Release
 Makefile.Debug
+
+# GUI generated files
+gui/temp
