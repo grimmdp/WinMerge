@@ -1,5 +1,6 @@
 syntax: glob
 *.bak
+*.orig
 
 # Generated Windows project/solution files
 *.vcproj
