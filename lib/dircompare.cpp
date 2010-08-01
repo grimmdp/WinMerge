@@ -1,4 +1,5 @@
 #include <QDir>
+#include <QFileInfo>
 #include <QString>
 #include <QList>
 #include <QStringList>
@@ -31,9 +32,16 @@ void DirCompare::DoCompare()
         int index = right.indexOf(*iter);
         if (index != -1)
         {
-            FileCompare compare(*iter, right.at(index));
-            ResultItem item = compare.Compare();
-            mResults << item;
+            QFileInfo inf1(*iter);
+            const bool leftIsFile = inf1.isFile();
+            QFileInfo inf2(right.at(index));
+            const bool rightIsFile = inf2.isFile();
+            if (leftIsFile && rightIsFile)
+            {
+                FileCompare compare(*iter, right.at(index));
+                ResultItem item = compare.Compare();
+                mResults << item;
+            }
         }
         ++iter;
     }
