@@ -1,3 +1,4 @@
+#include <QDebug>
 #include "mainwindow.h"
 #include "opendialog.h"
 
@@ -11,5 +12,11 @@ MainWindow::MainWindow()
 void MainWindow::OpenDirs()
 {
     OpenDialog dlg;
-    dlg.exec();
+    int retval = dlg.exec();
+    if (retval == QDialog::Accepted)
+    {
+        QString left = dlg.GetLeftItem();
+        QString right = dlg.GetRightItem();
+        qDebug() << "Selected items: " << left << ", " << right;
+    }
 }
