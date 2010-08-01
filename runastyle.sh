@@ -10,3 +10,5 @@ options="--indent=spaces --pad-oper --unpad-paren --pad-header"
 # src is Ansi-style - space-indent
 astyle $style $options gui/*.cpp
 astyle $style $options gui/*.h
+astyle $style $options lib/*.cpp
+astyle $style $options lib/*.h

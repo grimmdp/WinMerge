@@ -10,3 +10,5 @@ SET OPTIONS=--indent=spaces --pad-oper --unpad-paren --pad-header
 REM Src is Ansi-style - space-indent
 astyle %STYLE% %OPTIONS% gui/*.cpp
 astyle %STYLE% %OPTIONS% gui/*.h
+astyle %STYLE% %OPTIONS% lib/*.cpp
+astyle %STYLE% %OPTIONS% lib/*.h
