@@ -15,6 +15,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow();
 
+protected slots:
+    void OpenDirs();
+
 private:
     Ui::mMainWindow mUI;
 };

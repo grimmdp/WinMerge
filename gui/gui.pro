@@ -9,14 +9,17 @@ UI_DIR = temp
 INCLUDEPATH += ../ext/libxdiff/xdiff \
     ../lib
 
-FORMS = mainwindow.ui
+FORMS = mainwindow.ui \
+        opendialog.ui
 
 include($$PWD/../lib/lib.pri)
 
-HEADERS += mainwindow.h
+HEADERS += mainwindow.h \
+           opendialog.h
 
 SOURCES += main.cpp \
-           mainwindow.cpp\
+           mainwindow.cpp \
+           opendialog.cpp
 
 # Link with libxdiff
 CONFIG(debug, debug|release) {
