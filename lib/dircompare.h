@@ -1,6 +1,9 @@
 #ifndef DIRCOMPARE_H
 #define DIRCOMPARE_H
 
+#include <QList>
+#include "resultitem.h"
+
 class QString;
 class QDir;
 
@@ -11,10 +14,12 @@ public:
     ~DirCompare();
 
     void DoCompare();
+    QList<ResultItem> GetResults() const;
 
 private:
     QDir *mLeftDir;
     QDir *mRightDir;
+    QList<ResultItem> mResults;
 };
 
 #endif // DIRCOMPARE_H
