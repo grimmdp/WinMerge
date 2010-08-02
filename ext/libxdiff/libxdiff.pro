@@ -33,10 +33,22 @@ SOURCES += xdiff/xadler32.c \
            xdiff/xutils.c \
            xdiff/xversion.c
 
+# For configuration file selection we need to detect these three cases:
+# 1. Windows with MSVC compiler
+# 2. Windows with GCC compiler (and MinGW?)
+# 3. Linux/Unix
+# Since 1. uses Windows MSVC config and 2. and 3. uses GCC config
 win32 {
-    HEADERS += winconfig.h
-    DEFINES += HAVE_WINCONFIG_H
-    
+    contains(QMAKE_CC, gcc){
+        # MingW
+        HEADERS += config.h
+        DEFINES += HAVE_CONFIG_H
+    }
+    contains(QMAKE_CC, cl){
+        # Visual Studio
+        HEADERS += winconfig.h
+        DEFINES += HAVE_WINCONFIG_H
+    }
 }
 unix {
     HEADERS += config.h
