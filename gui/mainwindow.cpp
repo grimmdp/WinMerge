@@ -19,7 +19,7 @@ MainWindow::MainWindow()
 
 void MainWindow::OpenDirs()
 {
-    OpenDialog dlg;
+    OpenDialog dlg(this);
     int retval = dlg.exec();
     if (retval == QDialog::Accepted)
     {
