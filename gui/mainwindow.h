@@ -17,6 +17,7 @@ public:
 
 protected slots:
     void OpenDirs();
+    void AboutWinMerge();
 
 protected:
     void DoDirCompare(const QString &left, const QString &right);

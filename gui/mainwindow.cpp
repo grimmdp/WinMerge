@@ -2,6 +2,7 @@
 #include <QDebug>
 #include "mainwindow.h"
 #include "opendialog.h"
+#include "aboutdialog.h"
 #include "dircompare.h"
 #include "resultitem.h"
 #include "libxdiff_tools.h"
@@ -13,6 +14,7 @@ MainWindow::MainWindow()
 
     connect(mUI.mActionExit, SIGNAL(triggered()), this, SLOT(close()));
     connect(mUI.mActionOpenDirs, SIGNAL(triggered()), this, SLOT(OpenDirs()));
+    connect(mUI.mActionAboutWinMerge, SIGNAL(triggered()), this, SLOT(AboutWinMerge()));
 }
 
 void MainWindow::OpenDirs()
@@ -45,4 +47,10 @@ void MainWindow::DoDirCompare(const QString &left, const QString &right)
         qDebug() << "File: " << (*iter).name << " Result: " << resStr;
         ++iter;
     }
+}
+
+void MainWindow::AboutWinMerge()
+{
+    AboutDialog dlg(this);
+    dlg.exec();
 }

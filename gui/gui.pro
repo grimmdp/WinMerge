@@ -9,15 +9,18 @@ UI_DIR = temp
 INCLUDEPATH += ../ext/libxdiff/xdiff \
     ../lib
 
-FORMS = mainwindow.ui \
+FORMS = aboutdialog.ui \
+        mainwindow.ui \
         opendialog.ui
 
 include($$PWD/../lib/lib.pri)
 
-HEADERS += mainwindow.h \
+HEADERS += aboutdialog.h \
+           mainwindow.h \
            opendialog.h
 
-SOURCES += main.cpp \
+SOURCES += aboutdialog.cpp \
+           main.cpp \
            mainwindow.cpp \
            opendialog.cpp
 

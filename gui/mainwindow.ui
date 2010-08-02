@@ -30,7 +30,14 @@
     <addaction name="mActionOpenDirs"/>
     <addaction name="mActionExit"/>
    </widget>
+   <widget class="QMenu" name="mMenuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="mActionAboutWinMerge"/>
+   </widget>
    <addaction name="mMenuFile"/>
+   <addaction name="mMenuHelp"/>
   </widget>
   <widget class="QStatusBar" name="mStatusbar"/>
   <action name="mActionExit">
@@ -44,6 +51,11 @@
   <action name="mActionOpenDirs">
    <property name="text">
     <string>&amp;Open directories...</string>
+   </property>
+  </action>
+  <action name="mActionAboutWinMerge">
+   <property name="text">
+    <string>&amp;About WinMerge</string>
    </property>
   </action>
  </widget>
