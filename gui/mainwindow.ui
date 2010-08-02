@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>WinMerge</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="gui.qrc">
+    <normaloff>:/res/icon.png</normaloff>:/res/icon.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="mMenubar">
    <property name="geometry">
@@ -59,6 +63,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="gui.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -9,6 +9,8 @@ UI_DIR = temp
 INCLUDEPATH += ../ext/libxdiff/xdiff \
     ../lib
 
+RESOURCES = gui.qrc
+
 FORMS = aboutdialog.ui \
         mainwindow.ui \
         opendialog.ui
