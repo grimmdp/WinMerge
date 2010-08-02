@@ -6,6 +6,9 @@ MOC_DIR = temp
 OBJECTS_DIR = temp
 UI_DIR = temp
 
+# Windows manifest embedding
+CONFIG += embed_manifest_exe
+
 INCLUDEPATH += ../ext/libxdiff/xdiff \
     ../lib
 
