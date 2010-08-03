@@ -5,6 +5,10 @@ WinMerge 3 is a port of WinMerge (http://winmerge.org) to use cross-platform
 with Qt (http://qt.nokia.com/) framework. This project is still in very early
 stages.
 
+WinMerge 3 is LGPL licensed open source software. GPL license is included in
+file COPYING and LGPL license is in file COPYING.LESSER. More information about
+these licenses is available at http://www.gnu.org
+
 Compiling
 ---------
 
