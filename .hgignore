@@ -23,6 +23,7 @@ syntax: glob
 *.Plo
 *.lo
 *.la
+*.a
 
 syntax: regexp
 ~$
@@ -32,3 +33,8 @@ Makefile.Debug
 
 # GUI generated files
 gui/temp
+gui/qrc_gui.cpp
+
+# GUI binary
+gui/winmerge
+
