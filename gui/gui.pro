@@ -29,11 +29,22 @@ SOURCES += aboutdialog.cpp \
            mainwindow.cpp \
            opendialog.cpp
 
-# Link with libxdiff
-CONFIG(debug, debug|release) {
-    win32:LIBS += $$quote(../ext/libxdiff/debug/libxdiff.lib)
-} else {
-    win32:LIBS += $$quote(../ext/libxdiff/release/libxdiff.lib)
+# Link with libxdiff - need to select library name to link with first
+win32 {
+    contains(QMAKE_CC, gcc) {
+        # MingW
+        LIBXDIFFLIBRARY = liblibxdiff.a
+    }
+    contains(QMAKE_CC, cl) {
+        # Visual Studio
+        LIBXDIFFLIBRARY = libxdiff.lib
+    }
+
+    CONFIG(debug, debug|release) {
+        LIBS += $$quote(../ext/libxdiff/debug/$${LIBXDIFFLIBRARY})
+    } else {
+        LIBS += $$quote(../ext/libxdiff/release/$${LIBXDIFFLIBRARY})
+    }
 }
 
 unix:LIBS += -L../ext/libxdiff -llibxdiff
