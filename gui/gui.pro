@@ -13,6 +13,7 @@ INCLUDEPATH += ../ext/libxdiff/xdiff \
     ../lib
 
 RESOURCES = gui.qrc
+win32:RC_FILE = gui.rc
 
 FORMS = aboutdialog.ui \
         mainwindow.ui \
