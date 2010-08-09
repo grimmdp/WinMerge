@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <malloc.h>
+#include <cstdlib>
 #include "xdiff.h"
 #include "libxdiff_tools.h"
 
