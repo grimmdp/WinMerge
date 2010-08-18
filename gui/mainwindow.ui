@@ -47,6 +47,10 @@
   </widget>
   <widget class="QStatusBar" name="mStatusbar"/>
   <action name="mActionExit">
+   <property name="icon">
+    <iconset resource="gui.qrc">
+     <normaloff>:/res/exit.png</normaloff>:/res/exit.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Exit</string>
    </property>
@@ -55,11 +59,19 @@
    </property>
   </action>
   <action name="mActionOpenDirs">
+   <property name="icon">
+    <iconset resource="gui.qrc">
+     <normaloff>:/res/open-directories.png</normaloff>:/res/open-directories.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Open directories...</string>
    </property>
   </action>
   <action name="mActionOpenFiles">
+   <property name="icon">
+    <iconset resource="gui.qrc">
+     <normaloff>:/res/open-files.png</normaloff>:/res/open-files.png</iconset>
+   </property>
    <property name="text">
     <string>Open &amp;files...</string>
    </property>

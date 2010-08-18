@@ -1,5 +1,8 @@
-<!DOCTYPE RCC><RCC version="1.0">
-<qresource>
-    <file>res/icon.png</file>
-</qresource>
+<RCC>
+    <qresource prefix="/">
+        <file>res/icon.png</file>
+        <file>res/open-files.png</file>
+        <file>res/open-directories.png</file>
+        <file>res/exit.png</file>
+    </qresource>
 </RCC>
