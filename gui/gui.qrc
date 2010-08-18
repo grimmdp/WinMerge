@@ -4,5 +4,6 @@
         <file>res/open-files.png</file>
         <file>res/open-directories.png</file>
         <file>res/exit.png</file>
+        <file>res/new.png</file>
     </qresource>
 </RCC>
