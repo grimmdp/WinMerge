@@ -17,6 +17,7 @@ public:
 
 protected slots:
     void OpenDirs();
+    void OpenFiles();
     void AboutWinMerge();
 
 protected:

@@ -17,18 +17,21 @@ macx:ICON = res/mac/winmerge.icns
 
 FORMS = aboutdialog.ui \
         mainwindow.ui \
-        opendialog.ui
+        opendialog.ui \
+        openfilesdialog.ui
 
 include($$PWD/../lib/lib.pri)
 
 HEADERS += aboutdialog.h \
            mainwindow.h \
-           opendialog.h
+           opendialog.h \
+           openfilesdialog.h
 
 SOURCES += aboutdialog.cpp \
            main.cpp \
            mainwindow.cpp \
-           opendialog.cpp
+           opendialog.cpp \
+           openfilesdialog.cpp
 
 # Link with libxdiff - need to select library name to link with first
 win32 {

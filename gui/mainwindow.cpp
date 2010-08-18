@@ -2,6 +2,7 @@
 #include <QDebug>
 #include "mainwindow.h"
 #include "opendialog.h"
+#include "openfilesdialog.h"
 #include "aboutdialog.h"
 #include "dircompare.h"
 #include "resultitem.h"
@@ -14,6 +15,7 @@ MainWindow::MainWindow()
 
     connect(mUI.mActionExit, SIGNAL(triggered()), this, SLOT(close()));
     connect(mUI.mActionOpenDirs, SIGNAL(triggered()), this, SLOT(OpenDirs()));
+    connect(mUI.mActionOpenFiles, SIGNAL(triggered()), this, SLOT(OpenFiles()));
     connect(mUI.mActionAboutWinMerge, SIGNAL(triggered()), this, SLOT(AboutWinMerge()));
 }
 
@@ -27,6 +29,18 @@ void MainWindow::OpenDirs()
         QString right = dlg.GetRightItem();
         qDebug() << "Selected items: " << left << ", " << right;
         DoDirCompare(left, right);
+    }
+}
+
+void MainWindow::OpenFiles()
+{
+    OpenFilesDialog dlg(this);
+    int retval = dlg.exec();
+    if (retval == QDialog::Accepted)
+    {
+        QString left = dlg.GetLeftItem();
+        QString right = dlg.GetRightItem();
+        qDebug() << "Selected items: " << left << ", " << right;
     }
 }
 

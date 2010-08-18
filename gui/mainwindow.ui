@@ -31,7 +31,9 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
+    <addaction name="mActionOpenFiles"/>
     <addaction name="mActionOpenDirs"/>
+    <addaction name="separator"/>
     <addaction name="mActionExit"/>
    </widget>
    <widget class="QMenu" name="mMenuHelp">
@@ -55,6 +57,11 @@
   <action name="mActionOpenDirs">
    <property name="text">
     <string>&amp;Open directories...</string>
+   </property>
+  </action>
+  <action name="mActionOpenFiles">
+   <property name="text">
+    <string>Open &amp;files...</string>
    </property>
   </action>
   <action name="mActionAboutWinMerge">
