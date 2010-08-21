@@ -18,6 +18,8 @@ public:
 protected slots:
     void OpenDirs();
     void OpenFiles();
+    void ToggleMainToolBar();
+    void ToggleStatusBar();
     void AboutWinMerge();
 
 protected:

@@ -16,6 +16,10 @@ MainWindow::MainWindow()
     connect(mUI.mActionExit, SIGNAL(triggered()), this, SLOT(close()));
     connect(mUI.mActionOpenDirs, SIGNAL(triggered()), this, SLOT(OpenDirs()));
     connect(mUI.mActionOpenFiles, SIGNAL(triggered()), this, SLOT(OpenFiles()));
+
+    connect(mUI.mActionToolBarMain, SIGNAL(toggled(bool)), this, SLOT(ToggleMainToolBar()));
+    connect(mUI.mActionStatusBar, SIGNAL(toggled(bool)), this, SLOT(ToggleStatusBar()));
+
     connect(mUI.mActionAboutWinMerge, SIGNAL(triggered()), this, SLOT(AboutWinMerge()));
 }
 
@@ -61,6 +65,16 @@ void MainWindow::DoDirCompare(const QString &left, const QString &right)
         qDebug() << "File: " << (*iter).name << " Result: " << resStr;
         ++iter;
     }
+}
+
+void MainWindow::ToggleMainToolBar()
+{
+    mUI.mToolBarMain->setVisible(mUI.mActionToolBarMain->isChecked());
+}
+
+void MainWindow::ToggleStatusBar()
+{
+    mUI.mStatusBar->setVisible(mUI.mActionStatusBar->isChecked());
 }
 
 void MainWindow::AboutWinMerge()

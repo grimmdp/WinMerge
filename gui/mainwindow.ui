@@ -55,7 +55,7 @@
      <addaction name="mActionToolBarMain"/>
     </widget>
     <addaction name="mMenuToolbars"/>
-    <addaction name="mActionStatusbar"/>
+    <addaction name="mActionStatusBar"/>
     <addaction name="separator"/>
     <addaction name="mActionLanguage"/>
    </widget>
@@ -83,7 +83,7 @@
    <addaction name="mActionOpenFiles"/>
    <addaction name="mActionOpenDirs"/>
   </widget>
-  <widget class="QStatusBar" name="mStatusbar"/>
+  <widget class="QStatusBar" name="mStatusBar"/>
   <action name="mActionExit">
    <property name="icon">
     <iconset resource="gui.qrc">
@@ -137,7 +137,7 @@
     <bool>true</bool>
    </property>
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="text">
     <string>&amp;Standard</string>
@@ -146,7 +146,7 @@
     <string>Show or hide the &quot;Standard&quot; toolbar</string>
    </property>
   </action>
-  <action name="mActionStatusbar">
+  <action name="mActionStatusBar">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -154,7 +154,7 @@
     <bool>true</bool>
    </property>
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="text">
     <string>&amp;Statusbar</string>
