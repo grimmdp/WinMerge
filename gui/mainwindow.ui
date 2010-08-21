@@ -44,7 +44,23 @@
     </property>
     <addaction name="mActionAboutWinMerge"/>
    </widget>
+   <widget class="QMenu" name="mMenuView">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <widget class="QMenu" name="mMenuToolbars">
+     <property name="title">
+      <string>Toolbars</string>
+     </property>
+     <addaction name="mActionToolBarMain"/>
+    </widget>
+    <addaction name="mMenuToolbars"/>
+    <addaction name="mActionStatusbar"/>
+    <addaction name="separator"/>
+    <addaction name="mActionLanguage"/>
+   </widget>
    <addaction name="mMenuFile"/>
+   <addaction name="mMenuView"/>
    <addaction name="mMenuHelp"/>
   </widget>
   <widget class="QToolBar" name="mToolBarMain">
@@ -111,6 +127,55 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="mActionToolBarMain">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Standard</string>
+   </property>
+   <property name="toolTip">
+    <string>Show or hide the &quot;Standard&quot; toolbar</string>
+   </property>
+  </action>
+  <action name="mActionStatusbar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Statusbar</string>
+   </property>
+   <property name="toolTip">
+    <string>Show or hide the statusbar</string>
+   </property>
+  </action>
+  <action name="mActionLanguage">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui.qrc">
+     <normaloff>:/res/language.png</normaloff>:/res/language.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Language...</string>
+   </property>
+   <property name="toolTip">
+    <string>Select current language</string>
    </property>
   </action>
   <action name="mActionAboutWinMerge">
