@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Select two items</string>
+   <string>Select two files</string>
   </property>
   <property name="windowIcon">
    <iconset resource="gui.qrc">
