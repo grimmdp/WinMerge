@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <!--
+    TODO:
+      * Define build directory structure
+      * Add var for Qt files directory
+      * Rename program folder, software, start menu and desktop entry to something different "WinMerge"
+  -->
+  <?ifndef Platform ?> <!-- if platform NOT defined -->
+    <?define Platform = "x86" ?>
+  <?endif ?>
+  <?define Manufacturer = "WinMerge developers" ?>
+  <?define ProductName = "WinMerge" ?>
+  <?ifndef ProductVersion ?> <!-- if product version NOT defined -->
+    <?define ProductVersion = "3.0.0" ?>
+  <?endif ?>
+  
+  <?define PackageDescription = "WinMerge Installer" ?>
+  <?define PackageKeywords = "Installer" ?>
+  <?define PackageComments = "WinMerge" ?>
+  
+  <!--<?if $(var.Platform) = "x64" ?>--> <!-- if "x64" platform -->
+    <!--
+    <?define Win64 = "yes" ?>
+    <?define PackagePlatform = "x64" ?>
+    <?define UpgradeGuid = "6A683A20-BADF-4c0d-A82C-A6913278A202" ?>
+    
+    <?define ProgramFilesFolder = "ProgramFiles64Folder" ?>
+    <?define BuildDir = "..\..\Build\x64\release" ?>
+    
+    <?define StartMenuShortcutsGuid = "C280A62B-178C-4706-9678-E96C40EA69D8" ?>
+    <?define DesktopShortcutGuid = "AB31E848-1A30-4f02-B3E8-BEEF81B717A2" ?>
+    
+    <?define CrtMergeModule = "$(env.CommonProgramFiles)\Merge Modules\Microsoft_VC80_CRT_x86_x64.msm" ?>
+    -->
+  <!--<?else ?>--> <!-- if "x86" platform -->
+    <?define Win64 = "no" ?>
+    <?define PackagePlatform = "x86" ?>
+    <?define UpgradeGuid = "421DD78C-B26D-4ab9-B320-B32B181B9097" ?>
+    
+    <?define ProgramFilesFolder = "ProgramFilesFolder" ?>
+    <?define BuildDir = "..\..\Build\release" ?>
+    
+    <?define StartMenuShortcutsGuid = "A501BF7D-FCAD-44e3-8B5F-1A4209F1FA59" ?>
+    <?define DesktopShortcutGuid = "5957CEA9-F7D6-4f25-9255-EA3EA55CD7DC" ?>
+    
+    <?define CrtMergeModule = "$(env.CommonProgramFiles)\Merge Modules\Microsoft_VC80_CRT_x86.msm" ?>
+  <!--<?endif ?>-->
+</Include>

@@ -1,0 +1,28 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <DefineSolutionProperties>false</DefineSolutionProperties>
+    
+    <WixToolPath Condition="'$(WixToolPath)' == ''">$(PROGRAMFILES)\Windows Installer XML v3\bin\</WixToolPath>
+    <WixTargetsPath Condition="'$(WixTargetsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.0\Wix.targets</WixTargetsPath>
+    
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    
+    <OutputName Condition=" '$(ProductVersion)' != '' ">WinMerge-$(ProductVersion)-$(Platform)-Setup</OutputName>
+    <OutputName Condition=" '$(ProductVersion)' == '' ">WinMerge-$(Platform)-Setup</OutputName>
+    <OutputPath>..\..\Build\win-installer\$(Configuration)\$(Platform)\</OutputPath>
+    <IntermediateOutputPath>..\..\BuildTmp\win-installer\$(Configuration)\$(Platform)\</IntermediateOutputPath>
+    <OutputType>package</OutputType>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <WixExtension Include="$(WixToolPath)WixUIExtension.dll" />
+    <Compile Include="winmerge.wxs"/>
+    <Compile Include="fragments\core.wxs"/>
+    <Compile Include="fragments\features.wxs"/>
+    <Compile Include="fragments\wixui_winmerge.wxs"/>
+    <Compile Include="fragments\wixui_additionaltasksdlg.wxs"/>
+  </ItemGroup>
+  
+  <Import Project="$(WixTargetsPath)"/>
+</Project>

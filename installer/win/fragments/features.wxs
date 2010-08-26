@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include ..\config.wxi ?>
+  <Fragment>
+    <!--
+      * Level <= 3 is "Typical"
+      * Level <= 1000 is "Complete"
+    -->
+    <Feature Id="WinMerge" 
+      Absent="disallow" 
+      AllowAdvertise="no" 
+      ConfigurableDirectory="INSTALLDIR" 
+      Display="expand" 
+      Level="1" 
+      Title="WinMerge">
+      <ComponentRef Id="WinMerge" />
+      <ComponentRef Id="StartMenuShortcuts" />
+      <ComponentRef Id="DesktopShortcut" />
+      <Feature Id="CRT" AllowAdvertise="no" Display="hidden" Level="1" Title="Microsoft Visual C++ 2005 Runtime Components ">
+        <MergeRef Id="CRT"/>
+      </Feature>
+    </Feature>
+  </Fragment>
+</Wix>

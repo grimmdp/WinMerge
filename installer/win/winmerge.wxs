@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    candleArgs: "winmerge.wxs" "fragments\core.wxs" "fragments\features.wxs" "fragments\wixui_winmerge.wxs" "fragments\wixui_additionaltasksdlg.wxs" <extensions>
+    lightArgs: "winmerge.wixobj" "core.wixobj" "features.wixobj" "wixui_winmerge.wixobj" "wixui_additionaltasksdlg.wixobj" -ext WixUIExtension -out "<projectname>.msi" <extensions>
+-->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include Config.wxi ?>
+  <!--
+    TODO:
+      * Install Qt files
+  -->
+  <Product Id="*" 
+    Codepage="1252" 
+    Language="1033" 
+    Manufacturer="$(var.Manufacturer)" 
+    Name="$(var.ProductName)" 
+    UpgradeCode="$(var.UpgradeGuid)" 
+    Version="$(var.ProductVersion)">
+    
+    <Package Id="*" 
+      Comments="$(var.PackageComments)" 
+      Compressed="yes" 
+      Description="$(var.Manufacturer)" 
+      InstallerVersion="300" 
+      Keywords="$(var.PackageKeywords)" 
+      Languages="1033" 
+      Manufacturer="$(var.PackageDescription)" 
+      Platform="$(var.PackagePlatform)" 
+      SummaryCodepage="1252" />
+    
+    <Media Id="1"
+      Cabinet="winmerge.cab"
+      EmbedCab="yes" />
+    
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="$(var.ProgramFilesFolder)">
+        <Directory Id="INSTALLDIR" Name="WinMerge" />
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="WinMergeMenuFolder" Name="WinMerge" />
+      </Directory>
+      <Directory Id="DesktopFolder" />
+      <Merge Id="CRT" Language="0" SourceFile="$(var.CrtMergeModule)" DiskId="1" />
+    </Directory>
+    
+    <Property Id="TASK_STARTMENUSHORTCUTS">1</Property>
+    <Property Id="TASK_DESKTOPSHORTCUT">1</Property>
+    
+    <FeatureRef Id="WinMerge" />
+    
+    <!-- TODO: Works this really? -->
+    <Condition Message="WinMerge requires Windows 2000 or later to install.">
+      <![CDATA[( VersionNT <= 500 ) OR ( Version9x <> 0 )]]>
+    </Condition>
+    
+    <WixVariable Id="WixUILicenseRtf" Value="LGPL.rtf" />
+    <WixVariable Id="WixUIBannerBmp" Value="bitmaps\banner.bmp" /> 
+    <WixVariable Id="WixUIDialogBmp" Value="bitmaps\dialog.bmp" />
+    
+    <UIRef Id="WixUI_WinMerge" />
+    
+    <UI />
+    
+  </Product>
+</Wix>
