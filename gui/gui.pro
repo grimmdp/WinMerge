@@ -13,7 +13,10 @@ INCLUDEPATH += ../ext/libxdiff/xdiff \
 
 RESOURCES = gui.qrc
 win32:RC_FILE = gui.rc
-macx:ICON = res/mac/winmerge.icns
+macx {
+    ICON = res/mac/winmerge.icns
+    QMAKE_INFO_PLIST = res/mac/Info.plist
+}
 
 FORMS = aboutdialog.ui \
         mainwindow.ui \
