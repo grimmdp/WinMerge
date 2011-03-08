@@ -2,9 +2,9 @@
 REM Run Astyle to format source code
 REM Get Astyle from:
 REM http://astyle.sourceforge.net/
-REM Requires Astyle 1.24
+REM Requires Astyle 2.01 or later
 
-SET STYLE=--style=ansi
+SET STYLE=--style=ansi --lineend=linux
 SET OPTIONS=--indent=spaces --pad-oper --unpad-paren --pad-header
 
 REM Src is Ansi-style - space-indent

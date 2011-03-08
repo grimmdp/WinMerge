@@ -2,9 +2,9 @@
 # Run Astyle to format source code
 # Get Astyle from:
 # http://astyle.sourceforge.net/
-# Requires Astyle 1.24
+# Requires Astyle 2.01 or later
 
-style=--style=ansi
+style="--style=ansi --lineend=linux"
 options="--indent=spaces --pad-oper --unpad-paren --pad-header"
 
 # src is Ansi-style - space-indent
