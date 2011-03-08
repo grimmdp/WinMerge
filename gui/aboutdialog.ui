@@ -53,7 +53,7 @@
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Copyright (c) 2010 WinMerge developers</string>
+        <string>Copyright (c) 2010-2011 WinMerge developers</string>
        </property>
       </widget>
      </item>
