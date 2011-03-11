@@ -2,9 +2,9 @@
 #include "xdiff.h"
 #include "filecompare.h"
 
-FileCompare::FileCompare(const QString &left, const QString &right)
-    : mLeft(left)
-    , mRight(right)
+FileCompare::FileCompare(const QString &side1, const QString &side2)
+    : mSide1(side1)
+    , mSide2(side2)
 {
 }
 
@@ -12,8 +12,8 @@ ResultItem FileCompare::Compare()
 {
     mmfile_t block[2];
 
-    QFile cmpfile1(mLeft);
-    QFile cmpfile2(mRight);
+    QFile cmpfile1(mSide1);
+    QFile cmpfile2(mSide2);
 
     const unsigned file1size = cmpfile1.size();
     const unsigned file2size = cmpfile2.size();

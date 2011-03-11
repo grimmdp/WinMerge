@@ -7,12 +7,12 @@
 class FileCompare
 {
 public:
-    FileCompare(const QString &left, const QString &right);
+    FileCompare(const QString &side1, const QString &side2);
     ResultItem Compare();
 
 private:
-    QString mLeft;
-    QString mRight;
+    QString mSide1;
+    QString mSide2;
 };
 
 #endif // FILECOMPARE_H
