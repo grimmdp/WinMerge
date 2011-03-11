@@ -8,37 +8,37 @@
 #include "filecompare.h"
 #include "resultitem.h"
 
-DirCompare::DirCompare(const QString &left, const QString &right)
+DirCompare::DirCompare(const QString &item1, const QString &item2)
 {
-    mLeftDir = new QDir(left);
-    mRightDir = new QDir(right);
+    mDir1 = new QDir(item1);
+    mDir2 = new QDir(item2);
 }
 
 DirCompare::~DirCompare()
 {
-    delete mLeftDir;
-    delete mRightDir;
+    delete mDir1;
+    delete mDir2;
 }
 
 void DirCompare::DoCompare()
 {
-    const QFileInfoList left = mLeftDir->entryInfoList(QDir::NoFilter,
-                               QDir::Name | QDir::DirsFirst);
-    const QFileInfoList right = mRightDir->entryInfoList(QDir::NoFilter,
+    const QFileInfoList side1 = mDir1->entryInfoList(QDir::NoFilter,
+                                QDir::Name | QDir::DirsFirst);
+    const QFileInfoList side2 = mDir2->entryInfoList(QDir::NoFilter,
                                 QDir::Name | QDir::DirsFirst);
 
     mResults.clear();
 
-    QFileInfoList::const_iterator iter = left.constBegin();
-    QFileInfoList::const_iterator iter2 = right.constBegin();
-    while (iter != left.constEnd() && iter2 != right.constEnd())
+    QFileInfoList::const_iterator iter = side1.constBegin();
+    QFileInfoList::const_iterator iter2 = side2.constBegin();
+    while (iter != side1.constEnd() && iter2 != side2.constEnd())
     {
         const QFileInfo inf1 = *iter;
-        const bool leftIsFile = inf1.isFile();
+        const bool side1IsFile = inf1.isFile();
         const QFileInfo inf2 = *iter2;
-        const bool rightIsFile = inf2.isFile();
+        const bool side2IsFile = inf2.isFile();
 
-        if (leftIsFile && rightIsFile)
+        if (side1IsFile && side2IsFile)
         {
             if (inf1.fileName() == inf2.fileName())
             {
@@ -57,12 +57,12 @@ void DirCompare::DoCompare()
         }
         else
         {
-            if (!leftIsFile)
+            if (!side1IsFile)
             {
                 qDebug() << "Skipping left-side dir: " << inf1.baseName();
                 ++iter;
             }
-            if (!rightIsFile)
+            if (!side2IsFile)
             {
                 qDebug() << "Skipping right-side dir: " << inf2.baseName();
                 ++iter2;

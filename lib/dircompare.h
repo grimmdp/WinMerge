@@ -10,15 +10,15 @@ class QDir;
 class DirCompare
 {
 public:
-    DirCompare(const QString &left, const QString &right);
+    DirCompare(const QString &item1, const QString &item2);
     ~DirCompare();
 
     void DoCompare();
     QList<ResultItem> GetResults() const;
 
 private:
-    QDir *mLeftDir;
-    QDir *mRightDir;
+    QDir *mDir1;
+    QDir *mDir2;
     QList<ResultItem> mResults;
 };
 
