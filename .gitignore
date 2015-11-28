@@ -43,3 +43,8 @@ gui/qrc_gui.cpp
 # GUI binary
 gui/winmerge
 
+#build directories
+bin/
+build/
+debug/
+release/

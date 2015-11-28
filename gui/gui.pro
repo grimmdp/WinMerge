@@ -5,6 +5,17 @@ MOC_DIR = temp
 OBJECTS_DIR = temp
 UI_DIR = temp
 
+QT += widgets
+
+# Compiler flags
+msvc:QMAKE_CXXFLAGS += /openmp
+gcc:QMAKE_CXXFLAGS += -fopenmp -D_GLIBCXX_PARALLEL
+
+# Compiler Libs
+gcc:LIBS += -fopenmp
+
+CONFIG += c++14
+
 # Windows manifest embedding
 CONFIG += embed_manifest_exe
 
