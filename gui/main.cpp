@@ -4,27 +4,28 @@
 // Tests
 #include <QDebug>
 #include <omp.h>
-void testLang()
+void testCompilerConfig()
 {
-    #pragma omp parallel // OpenMp Test
+    // C++14 Test
+    auto testCpp14 = [](auto id) {
+        auto binary = 0b1001;
+        qDebug() << "Thread" << id << "Binary value" << binary;
+        return binary;
+    };
+
+    // OpenMp Test
+    #pragma omp parallel
     {
         int th_id = omp_get_thread_num();
-
-        // C++11 and C++14 Test
-        auto testLamda = [](auto id) {
-            auto binary = 0b1001;
-            qDebug() << "Hello world" << id << "Binary value " << binary;
-            return binary;
-        };
-        testLamda(th_id);
+        testCpp14(th_id);
     }
 }
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
+    testCompilerConfig();
 
-    testLang();
+    QApplication app(argc, argv);
 
     MainWindow window;
     window.show();

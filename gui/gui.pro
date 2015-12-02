@@ -29,8 +29,7 @@ macx {
     QMAKE_INFO_PLIST = res/mac/Info.plist
 }
 
-FORMS = aboutdialog.ui \
-        mainwindow.ui \
+FORMS = mainwindow.ui \
         opendialog.ui \
         openfilesdialog.ui
 
